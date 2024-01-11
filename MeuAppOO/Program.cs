@@ -41,6 +41,9 @@ Console.WriteLine();
 Console.WriteLine($"Quantidade total de itens do carrinho = {carrinho.Quantidade}!".ToUpper());
 Console.WriteLine($"Valor total de itens do carrinho = {carrinho.Total.ToString("C")}!".ToUpper());
 
+Console.WriteLine();
+carrinho.InfomrmarPagamento();
+
 #endregion
 
 Console.WriteLine("#################### - FINAL - ##########");
