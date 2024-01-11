@@ -5,7 +5,7 @@ namespace MeuAppOO.Pagamento
     public class PagamentoSelecionar
     {
 
-        public static IPagamento InfomrmarPagamento()
+        public static IPagamento InformarPagamento()
         {
 
             Console.WriteLine("selecione uma forma de pagamento: 1 - pix, 2 - cartao de credito, 3 - cartão de débito.".ToUpper());
@@ -24,7 +24,7 @@ namespace MeuAppOO.Pagamento
                     return new PagamentoCartaoDebito();
 
                 default:
-                    return InfomrmarPagamento();
+                    return InformarPagamento();
             }
         }
     }

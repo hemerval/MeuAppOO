@@ -1,5 +1,8 @@
 ﻿
 using MeuAppOO;
+using MeuAppOO.Frete;
+using MeuAppOO.Frete.Impl;
+using MeuAppOO.Pagamento;
 
 Console.WriteLine("#################### - INICIO - ##########");
 
@@ -42,7 +45,16 @@ Console.WriteLine($"Quantidade total de itens do carrinho = {carrinho.Quantidade
 Console.WriteLine($"Valor total de itens do carrinho = {carrinho.Total.ToString("C")}!".ToUpper());
 
 Console.WriteLine();
-carrinho.InfomrmarPagamento();
+
+IPagamento pagamento = PagamentoSelecionar.InformarPagamento();
+pagamento.ProcessarPagamento(carrinho);
+
+
+Console.WriteLine();
+
+ICalcularFrete frete = FreteSelecionar.Informarfrete();
+OpcaoFrete opcaoFrete = frete.Calcular(carrinho);
+Console.WriteLine($"Opção de frete, nome: {opcaoFrete.Nome}, prazo: {opcaoFrete.Prazo}, valor: {opcaoFrete.Valor.ToString("C")}".ToUpper());
 
 #endregion
 

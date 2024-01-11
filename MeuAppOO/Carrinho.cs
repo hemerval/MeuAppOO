@@ -1,6 +1,4 @@
-﻿using MeuAppOO.Pagamento;
-
-namespace MeuAppOO
+﻿namespace MeuAppOO
 {
     public class Carrinho
     {
@@ -35,11 +33,6 @@ namespace MeuAppOO
         public decimal Total
         {
             get { return items.Sum(x => x.Quantidade * x.Total); }
-        }
-
-        public void InfomrmarPagamento()
-        {
-            PagamentoSelecionar.InfomrmarPagamento().ProcessarPagamento(this);
         }
     }
 }
